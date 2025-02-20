@@ -1,6 +1,3 @@
-pub fn rev()
-{
-    let palavra: String = String::from("Data Structure");
-
-    
+pub fn main() {
+    println!("Olá, mundo!");  // Modificação feita aqui
 }
