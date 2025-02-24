@@ -1,3 +1,6 @@
-pub fn main() {
-    println!("Olá, mundo!");  // Modificação feita aqui
+fn main() 
+{
+    let entrada = "Hello World";
+    let reversa: String = entrada.chars().rev().collect();
+    println!("{}", reversa);
 }
