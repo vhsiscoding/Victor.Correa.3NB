@@ -1,38 +1,11 @@
-// Uma lista ligada simples usando Box e Option.
-pub struct List<T> {
-    head: Option<Box<Node<T>>>,
-}
+// src/lib.rs
 
-struct Node<T> {
-    elem: T,
-    next: Option<Box<Node<T>>>,
-}
-
-impl<T> List<T> {
-    /// Cria uma nova lista vazia.
-    pub fn new() -> Self {
-        List { head: None }
+pub unsafe fn multiply_array(ptr: *const i32, len: usize) -> i32 {
+    let mut product = 1;
+    for i in 0..len {
+        product *= *ptr.offset(i as isize);
     }
-
-    /// Insere um elemento no início da lista.
-    pub fn push(&mut self, elem: T) {
-        let new_node = Box::new(Node {
-            elem,
-            next: self.head.take(),
-        });
-        self.head = Some(new_node);
-    }
-    fn main() {
-        lwt mut num = 5;
-    }
-    
-    /// Remove e retorna o elemento do início da lista.
-    pub fn pop(&mut self) -> Option<T> {
-        self.head.take().map(|node| {
-            self.head = node.next;
-            node.elem
-        })
-    }
+    product
 }
 
 #[cfg(test)]
@@ -40,17 +13,13 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_list() {
-        let mut list = List::new();
-        assert_eq!(list.pop(), None);
-
-        list.push(10);
-        list.push(20);
-        list.push(30);
-
-        assert_eq!(list.pop(), Some(30));
-        assert_eq!(list.pop(), Some(20));
-        assert_eq!(list.pop(), Some(10));
-        assert_eq!(list.pop(), None);
+    fn test_multiply_array() {
+        let arr = [2, 3, 4];
+        let product = unsafe { multiply_array(arr.as_ptr(), arr.len()) };
+        assert_eq!(product, 24);
     }
+}
+
+fn main() {
+    println!("Hello, world!");
 }
