@@ -2,6 +2,8 @@
 
 pub unsafe fn multiply_array(ptr: *const i32, len: usize) -> i32 {
     let mut product = 1;
+
+    //alterando o 'for in 1 0..len' para 'for in 0 len..', assim, deixa de ignorar o primeiro valor da array
     for i in 0..len {
         product *= *ptr.offset(i as isize);
     }
