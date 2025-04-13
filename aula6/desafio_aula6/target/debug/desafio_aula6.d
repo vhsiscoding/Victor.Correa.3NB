@@ -1,0 +1,1 @@
+/workspaces/Victor.Correa.3NB/aula6/desafio_aula6/target/debug/desafio_aula6: /workspaces/Victor.Correa.3NB/aula6/desafio_aula6/src/lib.rs /workspaces/Victor.Correa.3NB/aula6/desafio_aula6/src/main.rs

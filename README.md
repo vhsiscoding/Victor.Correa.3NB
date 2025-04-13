@@ -5,4 +5,4 @@
 - Turma: ADS3NB
 
 
-Desafio aula 4 completo em horario de aula
+Desafio aula 6 completo fora de horario de aula
